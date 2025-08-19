@@ -3,8 +3,8 @@ name: Deploy to GitHub Pages
 on:
   # mainブランチにプッシュされたときに実行
   push:
-    branches: [ "main" ]
-  
+    branches: ["main"]
+
   # 手動でワークフローを実行できるようにする
   workflow_dispatch:
 
@@ -29,12 +29,12 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'npm'
+          node-version: "20"
+          cache: "npm"
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
-        
+
       - name: Install dependencies
         run: npm ci
 
