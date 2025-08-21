@@ -66,7 +66,12 @@ export default function App() {
 
   return (
     <div className="todo-app">
-      <h1>Todo List with Loro</h1>
+      <h1>Loroを使用した共同編集Todoリスト</h1>
+      <p>
+        複数タブを開くとTodoの内容がリアルタイムで同期します。
+        <br />
+        データは保存されません。全てのタブを閉じるとデータは消えます。
+      </p>
 
       {/* 新しいTODO追加 */}
       <div className="add-todo">
@@ -74,12 +79,12 @@ export default function App() {
           type="text"
           value={newTodoText}
           onChange={(e) => setNewTodoText(e.target.value)}
-          placeholder="Add a new todo..."
+          placeholder="新しいTodoを入力"
           onKeyDown={(e) => e.key === "Enter" && handleAddTodo()}
           className="add-todo-input"
         />
         <button onClick={handleAddTodo} className="add-todo-button">
-          Add
+          追加
         </button>
       </div>
 
@@ -110,7 +115,7 @@ export default function App() {
       </DndContext>
 
       {todoList.length === 0 && (
-        <p className="empty-state">No todos yet. Add one above!</p>
+        <p className="empty-state">まだTodoがありません</p>
       )}
     </div>
   );
