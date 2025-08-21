@@ -80,7 +80,9 @@ export default function App() {
           value={newTodoText}
           onChange={(e) => setNewTodoText(e.target.value)}
           placeholder="新しいTodoを入力"
-          onKeyDown={(e) => e.key === "Enter" && handleAddTodo()}
+          onKeyDown={(e) =>
+            e.key === "Enter" && !e.nativeEvent.isComposing && handleAddTodo()
+          }
           className="add-todo-input"
         />
         <button onClick={handleAddTodo} className="add-todo-button">
